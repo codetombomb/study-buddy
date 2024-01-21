@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Study Buddy",
+    "version": "1.0",
+    "description": "AI powered study tool that quizes you on readings from your current page. It can also offer quick summaries of the content.",
+    "icons": {
+        "128": "images/icon128.png",
+        "48": "images/icon48.png",
+        "32": "images/icon32.png",
+        "16": "images/icon16.png"
+    },
+    "author": "codetombomb@gmail.com",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "https://learning.flatironschool.com/*"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://learning.flatironschool.com/*"],
+            "js": ["scripts/content.js"]
+        }
+    ],
+    "permissions": ["scripting"]
+}
